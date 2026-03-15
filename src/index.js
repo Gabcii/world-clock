@@ -13,6 +13,15 @@ function updateTime() {
   let trollTime = moment().tz("Antarctica/Troll");
   trollDateElement.innerHTML = trollTime.format("MMMM Do, YYYY");
   trollTimeElement.innerHTML = trollTime.format("H:mm:ss [<small>]A[</small>]");
+
+  let canaryElement = document.querySelector("#canary");
+  let canaryDateElement = canaryElement.querySelector(".date");
+  let canaryTimeElement = canaryElement.querySelector(".time");
+  let canaryTime = moment().tz("Atlantic/Canary");
+  canaryDateElement.innerHTML = canaryTime.format("MMMM Do, YYYY");
+  canaryTimeElement.innerHTML = canaryTime.format(
+    "H:mm:ss [<small>]A[</small>]",
+  );
 }
 updateTime();
 setInterval(updateTime, 1000);
